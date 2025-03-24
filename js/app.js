@@ -5,9 +5,9 @@ let foodInventory = [
         type: 'pollo',
         name: 'Pechuga de Pollo',
         quantity: '2.5 kg',
-        manufacturingDate: '2025-03-10',
-        entryDate: '2025-03-15',
-        expirationDate: '2025-03-22',
+        manufacturingDate: '2025-03-09',
+        entryDate: '2025-03-14',
+        expirationDate: '2025-03-21',
         status: 'warning' // Puede ser: ok, warning, danger
     },
     {
@@ -15,8 +15,8 @@ let foodInventory = [
         type: 'carne',
         name: 'Carne de Res',
         quantity: '1.2 kg',
-        manufacturingDate: '2025-03-08',
-        entryDate: '2025-03-12',
+        manufacturingDate: '2025-03-07',
+        entryDate: '2025-03-11',
         expirationDate: '2025-03-25',
         status: 'ok'
     },
@@ -25,9 +25,9 @@ let foodInventory = [
         type: 'pescado',
         name: 'Salmón',
         quantity: '0.8 kg',
-        manufacturingDate: '2025-03-14',
-        entryDate: '2025-03-16',
-        expirationDate: '2025-03-19',
+        manufacturingDate: '2025-03-13',
+        entryDate: '2025-03-15',
+        expirationDate: '2025-03-18',
         status: 'danger'
     },
     {
@@ -35,9 +35,9 @@ let foodInventory = [
         type: 'lacteos',
         name: 'Queso Fresco',
         quantity: '0.5 kg',
-        manufacturingDate: '2025-03-12',
-        entryDate: '2025-03-14',
-        expirationDate: '2025-03-28',
+        manufacturingDate: '2025-03-11',
+        entryDate: '2025-03-13',
+        expirationDate: '2025-03-27',
         status: 'ok'
     }
 ];
@@ -53,8 +53,8 @@ const expirationConfig = {
 };
 
 // Temperatura actual (simulada)
-let currentTemp = 4; // en grados Celsius
-let currentHumidity = 65; // porcentaje
+let currentTemp = 7.2; // en grados Celsius
+let currentHumidity = 67; // porcentaje
 
 // Función para calcular fecha de vencimiento
 function calculateExpirationDate(foodType, manufacturingDate, entryDate, temperature) {

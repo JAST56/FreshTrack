@@ -1,9 +1,9 @@
 /* Variables globales */
 :root {
-    --primary-color: #4caf50;
-    --secondary-color: #2e7d32;
+    --primary-color: #ae272e;
+    --secondary-color: #ee9039;
     --danger-color: #f44336;
-    --warning-color: #ff9800;
+    --warning-color: #ee9039;
     --light-color: #f8f9fa;
     --dark-color: #343a40;
     --gray-color: #6c757d;
@@ -21,7 +21,7 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #FFFFFF;
     color: var(--dark-color);
     line-height: 1.6;
 }
@@ -32,6 +32,7 @@ body {
     box-shadow: var(--shadow);
     padding: 20px;
     margin-bottom: 20px;
+    border-top: 3px solid var(--primary-color);
 }
 
 .subtitle {
@@ -53,9 +54,15 @@ header {
     z-index: 100;
 }
 
-.logo h1 {
-    color: var(--primary-color);
-    font-size: 1.8rem;
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px; /* Aumentado de 60px a 80px */
+    width: auto;
+    margin-right: 30px; /* Aumentado el margen para dar más espacio */
 }
 
 .sensors {
@@ -71,7 +78,7 @@ header {
 }
 
 .sensor-item i {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 1.2rem;
 }
 
@@ -109,7 +116,7 @@ header {
 .notification-panel {
     position: absolute;
     top: 45px;
-    right: 0;
+    left: 0;
     width: 300px;
     background-color: var(--white-color);
     border-radius: var(--border-radius);
@@ -123,6 +130,9 @@ header {
     margin-bottom: 10px;
     color: var(--primary-color);
     font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
 }
 
 .notification-item {
@@ -165,6 +175,8 @@ thead th {
     color: var(--white-color);
     padding: 12px;
     text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 tbody tr:nth-child(even) {
@@ -194,11 +206,11 @@ tbody td {
 }
 
 .status-ok {
-    background-color: var(--primary-color);
+    background-color: #28a745;
 }
 
 .status-warning {
-    background-color: var(--warning-color);
+    background-color: var(--secondary-color);
 }
 
 .status-danger {
@@ -232,11 +244,14 @@ input, select {
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(174, 39, 46, 0.2);
 }
 
 .btn-primary:hover {
-    background-color: var(--secondary-color);
+    background-color: #9a1f25;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(174, 39, 46, 0.3);
 }
 
 /* Sección de entrada de datos */
@@ -252,6 +267,40 @@ footer {
     background-color: var(--white-color);
     border-top: 1px solid #eee;
     color: var(--gray-color);
+}
+
+/* Sección adicional para mejoras visuales */
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(238, 144, 57, 0.2);
+}
+
+/* Animación suave para las filas de la tabla */
+tbody tr {
+    transition: transform 0.2s ease;
+}
+
+tbody tr:hover {
+    transform: translateX(5px);
+    background-color: rgba(174, 39, 46, 0.05);
 }
 
 /* Responsive */
@@ -274,6 +323,11 @@ footer {
     }
     
     .notification-panel {
-        width: 280px;
+        width: -100px;
+        right: auto;
+    }
+    
+    .logo img {
+        height: 90px;
     }
 }
